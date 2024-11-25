@@ -6,7 +6,19 @@ public class WaterSortGame_Tester
         WaterSortGame game1 = new WaterSortGame(colors, 5);
 
         game1.display();
+        System.out.println();
+        
+        game1.select(1);
+        System.out.println();
+        
+        game1.pour(6);
+        game1.display();
 
+        game1.deselect();
+        System.out.println();
+        game1.display();
+        
+        
     }
 
 

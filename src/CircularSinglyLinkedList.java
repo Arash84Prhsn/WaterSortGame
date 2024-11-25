@@ -25,18 +25,19 @@ public class CircularSinglyLinkedList<T>
     private Node<T> tail = null;
     private int size = 0;
 
+    //CircularSinglyLinkedList constructor
     public CircularSinglyLinkedList(){}
 
     public Node<T> getHead() {return head;}
-    public T getFirst() {return head.getElement();}
+    public T getFirst()      {return head.getElement();}
     public Node<T> getTail() {return tail;}
-    public T getLast() {return tail.getElement();}
-    public int getSize() {return size;}
+    public T getLast()       {return tail.getElement();}
+    public int getSize()     {return size;}
 
     public void setHead(Node<T> head) {this.head = head;}
     public void setTail(Node<T> tail) {this.tail = tail;}
 
-    public boolean isEmpty(){return size==0;}
+    public boolean isEmpty() {return this.getSize()==0;}
 
     public void addFirst(T newElement)
     {
@@ -159,4 +160,4 @@ public class CircularSinglyLinkedList<T>
         return tempNode.getElement();
     }
 
-}
+}//End of CircularSinglyLinkedList class
