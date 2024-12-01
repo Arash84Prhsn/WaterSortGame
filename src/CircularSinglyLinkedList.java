@@ -165,7 +165,7 @@ public class CircularSinglyLinkedList<T>
             tempNode = tempNode.getNext();
 
         }
-        //sada
+        
         return tempNode.getElement();
     }
 
