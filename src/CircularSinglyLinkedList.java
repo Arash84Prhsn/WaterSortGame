@@ -128,6 +128,15 @@ public class CircularSinglyLinkedList<T>
 
     }
 
+    public int getIndexOf(T item)
+    {
+        for (int i = 0; i < this.getSize(); i++)
+            if (this.getItemAt(i).equals(item))
+                return i;
+
+        return -1;
+    }
+
     public T getNextItem(T item)
     {
         
