@@ -1,36 +1,33 @@
 import javax.swing.*; // Import Swing components
-import java.awt.event.*; // Import event handling classes
+import java.awt.*; // Import event handling classes
 
-public class SwingTest {
-    public static void main(String[] args) {
-        // Step 1: Create a JFrame (main window)
-        JFrame frame = new JFrame("Simple Swing Application");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Close the app when the window is closed
-        frame.setSize(300, 200); // Set window size (width, height)
-
-        // Step 2: Create a JLabel (text display)
-        JLabel label = new JLabel("Click the button to change this text!");
-        
-        // Step 3: Create a JButton (button)
-        JButton button = new JButton("Click Me!");
-        
-        // Step 4: Add an ActionListener to the button
-        button.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                label.setText("Text changed after button click!"); // Change the text when clicked
-            }
-        });
-        
-        // Step 5: Set Layout (using default layout)
-        frame.setLayout(new java.awt.FlowLayout());
-        
-        // Step 6: Add components to the frame
-        frame.add(label);  // Add JLabel to JFrame
-        frame.add(button); // Add JButton to JFrame
-        
-        // Step 7: Make the frame visible
-        frame.setVisible(true); // Show the window
+public class SwingTest extends JPanel {
     
+    public void paintComponent( Graphics g ) {
+        super.paintComponent( g );
+        int width = getWidth(); // total width
+        int height = getHeight();
+
+        g.drawLine( 12, 12, width-12, 12 );
+        g.drawLine( 12, height-12, width-12, height-12 );
+    }
+    
+    public static void main(String[] args) {
+
+        String start = JOptionPane.showInputDialog("Do you want to Start the water sort game?");
+
+
+        JOptionPane.showMessageDialog( null, "Welcometo\nthe WaterSortGame" );
+        
+        SwingTest drawpanel = new SwingTest();
+
+        JFrame application = new JFrame();
+        application.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
+        application.add( drawpanel ); // add the panel to the frame
+        application.setSize( 250, 250 ); // set the size of the frame
+        application.setVisible( true );
+        
+
     }//End main
 
 }//End of SwingTest class
