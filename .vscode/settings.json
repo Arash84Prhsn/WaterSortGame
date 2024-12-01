@@ -2,9 +2,7 @@
     "java.project.sourcePaths": [
         "src"
     ],
-    "java.project.outputPath": [
-        "bin"
-    ],
+    "java.project.outputPath": "bin",
     "java.project.referencedLibraries": [
         "e:\\Programming files\\VSCODE_Java\\WaterSortGame project\\WaterSortGame_Project\\lib\\javafx.media.jar",
         "e:\\Programming files\\VSCODE_Java\\WaterSortGame project\\WaterSortGame_Project\\lib\\javafx.controls.jar",
