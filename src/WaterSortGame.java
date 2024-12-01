@@ -49,7 +49,7 @@ public class WaterSortGame
     // private String brightWhite = "\u001B[1;37m";
     
     //End of ANSI codes.
-//---------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------
     
     //Class constructor.
     public WaterSortGame (String[] COLORS, int bottleCapacity)
