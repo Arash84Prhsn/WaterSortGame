@@ -555,7 +555,7 @@ public class WaterSortGame
         return;
     }
 
-    //The main method that uses everything we have defined so far to run the game.
+    //The main method that uses everything we have defined so far to play the game.
     private void gaming()
     {   
         @SuppressWarnings("resource")
