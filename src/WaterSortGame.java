@@ -16,7 +16,7 @@ public class WaterSortGame
     private Tuple4<String, Integer, Integer, Integer>[] actions = new Tuple4[10]; 
 
 //---------------------------------------------------------------------------------
-    //Colors ANSI code: (with thanks to chatgpt for writing them out for me.) 
+    //Colors ANSI code: (with thanks to chatgpt for writing them all out for me.) 
     private String resetColor = "\u001B[0m"; // Reset to default color
     
     private String red = "\u001B[31m";
