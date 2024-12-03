@@ -51,6 +51,6 @@ Aside from the commands that we've already talked about there are a few methods 
 
 - `addToActions(String action, int selectedBottle, int argument, int pouredColors)` First this method shifts the entire array to the right so the oldest action is deleted and then adds the new action at index 0.
 
-- `shiftLeftActions` Shifts the actions array to the left and makes index 9 of the array ("nofunc",-1,-1,-1) 4-tuple. This method is called every time the undo method, undoes a certain action (the undo method always undoes the index 0 of the actions array that's why we at every undo we shift the array to left).
+- `shiftLeftActions` Shifts the actions array to the left and makes index 9 of the array, ("nofunc",-1,-1,-1) 4-tuple. This method is called every time the undo method, undoes a certain action (the undo method always undoes the index 0 of the actions array that's why we at every undo we shift the array to left).
 
 - `hasWon` Checks the current state of all the bottles to see if the game has finished or not. returns true if finished and false otherwise.
