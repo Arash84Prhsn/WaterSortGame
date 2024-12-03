@@ -1,4 +1,4 @@
-## What is the Water_Sort_Game?
+## What is the Water Sort Game?
 The water sort game consists of a number of bottles (one plus the number of colors in the game to be precise) where after you the user give the
 game the colors that you want to play with and the capacity of your bottles and then the game randomly distributes the colors among the bottles in a way that
 there are as many instances of each as the bottle capacity that we set for the game.
@@ -18,7 +18,6 @@ There are some rules and commands that you're gonna need to use to achive this g
 
 ## Rules
 There are some rules that you have to follow alongside the commands that you use for playing.
-
 The first rule is a condition for selecting the bottles, you are not allowed to choose a bottle if it is compeletly empty or it is compeletly full of one color.
 
 Second is the rule for pouring onto bottles. in order to pour from a selected bottle onto your destination bottle some conditions must be fulfilled :
