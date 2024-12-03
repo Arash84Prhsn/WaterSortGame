@@ -8,12 +8,12 @@ Your goal in this game is to organize the bottles such that each bottle is full 
 
 There are some rules and commands that you're gonna need to use to achive this goal, first let's list off the commands and the explain the rules of the game
 
-- `select $` This command selects the bottle numbered $.
+- `select $` This command selects the bottle numbered `$`.
 - `selectNext` This command selects the next bottle after the selected bottle and if the final bottle is selected it selects the first bottle.
 - `selectPrevious` Works in similar fashion to "selectNext" except that it selects the bottle before the selected bottle.
 - `deselect` If a bottle is selected, this command deselects that bottle.
-- `swap $` Swaps the current selected bottle with the bottle numbered $.
-- `pour $` From the current selected bottle, pours onto the bottle numbered $.(the conditions of this command are explained in rules section).
+- `swap $` Swaps the current selected bottle with the bottle numbered `$`.
+- `pour $` From the current selected bottle, pours onto the bottle numbered `$`.(the conditions of this command are explained in rules section).
 - `undo` This command undoes your latest action, however it can only undo up to the last 10 actions and no more.
 - `finish` finishes the game.
 
