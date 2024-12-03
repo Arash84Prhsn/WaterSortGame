@@ -1,7 +1,7 @@
 ## What is the Water Sort Game?
 The water sort game consists of a number of bottles (one plus the number of colors in the game to be precise) where after you the user give the
 game the colors that you want to play with and the capacity of your bottles and then the game randomly distributes the colors among the bottles in a way that
-there are as many instances of each as the bottle capacity that we set for the game.
+there are as many instances of each as the bottle capacity that you set for the game.
 
 ## Playing the game
 Your goal in this game is to organize the bottles such that each bottle is full and only contains a single color(and one bottle will end up being empty).
@@ -26,7 +26,7 @@ Second is the rule for pouring onto bottles. in order to pour from a selected bo
 
 - 1- The top color of the selected bottle must match the top color of the destination bottle or the destination must be compeletly empty.
 
-- 2- The pouring will continue until we the destination bottle fills up or we reach a different color in the selected bottle.
+- 2- The pouring will continue until the destination bottle fills up or we reach a different color in the selected bottle.
 
 - 3- You are not allowed to pour onto the same bottle as the current selected bottle
 
@@ -34,7 +34,7 @@ And the last Rule that you should know is that the game will only end when you w
 otherwise it will continue.
 
 ## Implementing the game
-The game has been implemented using Java and it runs inside a terminal. The source code of this implementation is inside the `src` folder
+The game has been implemented using Java and it runs inside a terminal. The source code is inside the `src` folder and the main class that the code for the game is written, is the WaterSortGame.java class and the other classes are there help the implementation of the game. The bottles themselves are stored inside a CirculadLinkedList<Stack<String>> where each stack acts as a bottle and stores the colors inside the bottle as Strings. The purpose of the Tuple4 class is to create an array of size 10 of 4-tuples(command, indexOfSelectedBottle, argument, numberOfPouredColors) where each item of the array is a command that the player has called this array is used to implement the undo command of the game 
 
 
 
