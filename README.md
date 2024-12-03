@@ -47,4 +47,4 @@ Aside from the commands that we've already talked about there are a few methods 
 
 - `display` This method displays the current state of the bottles and gives the player a list of the commands that he can give the game. This method is recalled after every action until the game finishes.
 - `isSelectable(Stack bottle)` This method checks if the given bottle fulfills the conditions that a bottle must have in order to be selected and returns true if the bottle is selectable and false if it is not. The `select`, `selectNext` and `selectPrevious` methods all use this method to first check if the bottle that they are going to select is selectable and only then select the bottle.
-- `` 
+- `addToActions(String action, int selectedBottle, int argument, int pouredColors)` This method   
