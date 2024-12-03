@@ -34,6 +34,7 @@ And the last Rule that you should know is that the game will only end when you w
 otherwise it will continue.
 
 ## Implementing the game
+The game has been implemented using Java and it runs inside a terminal. The source code of this implementation is inside the `src` folder
 
 
 
