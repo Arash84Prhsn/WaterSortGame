@@ -34,7 +34,7 @@ And the last Rule that you should know is that the game will only end when you w
 otherwise it will continue.
 
 ## Implementing the game
-The game has been implemented using Java and it runs inside a terminal. The source code is inside the `src` folder and the main class that the code for the game is written, is the WaterSortGame.java class and the other classes are there help the implementation of the game. The bottles themselves are stored inside a CirculadLinkedList<Stack<String>> where each stack acts as a bottle and stores the colors inside the bottle as Strings. The purpose of the Tuple4 class is to create an array of size 10 of 4-tuples(command, indexOfSelectedBottle, argument, numberOfPouredColors) where each item of the array is a command that the player has called this array is used to implement the undo command of the game 
+The game has been implemented using Java and it runs inside a terminal. The source code is inside the `src` folder and the main class that the code for the game is written, is the WaterSortGame.java class and the other classes are there help the implementation of the game. The bottles themselves are stored inside a CirculadLinkedList\<Stack\<String\>\> where each stack acts as a bottle and stores the colors inside the bottles as Strings. The purpose of the Tuple4 class is to create an array of size 10 of 4-tuples(command, indexOfSelectedBottle, argument, numberOfPouredColors) where each item of the array is a command that the player has called this array is used to implement the undo command of the game 
 
 
 
