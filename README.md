@@ -2,7 +2,8 @@
 The water sort game consists of a number of bottles (one plus the number of colors in the game to be precise) where after you the user give the
 game the colors that you want to play with and the capacity of your bottles and then the game randomly distributes the colors among the bottles in a way that
 no color appears more than the capacity that we set for the game (each color appears exactly as many times as the capacity).
-
+\\
+daw
 
 
 
