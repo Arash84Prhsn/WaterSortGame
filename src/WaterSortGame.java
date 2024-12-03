@@ -128,7 +128,7 @@ public class WaterSortGame
                 switch (currentColor) {
                     
                     case "green":
-                        System.out.printf("%-21s","| " + green + currentColor + resetColor);//pad out to right so we have a minimum length of 12
+                        System.out.printf("%-21s","| " + green + currentColor + resetColor);
                         break;
                     case "Green":
                         System.out.printf("%-21s","| " + green + currentColor + resetColor);
@@ -350,7 +350,7 @@ public class WaterSortGame
             counter++;
         }//end while
 
-        //if pouring occured, then add the 4-tuple ("pour", indexOfSelectedBottle, argumentGivenToPour, AmountOfColorsPoured) to actions.
+        //if pouring has occured, then add the 4-tuple ("pour", indexOfSelectedBottle, argumentGivenToPour, AmountOfColorsPoured) to actions.
         if (poured) {
             this.addToActions("pour", bottles.getIndexOf(selectedBottle), bottleNumber, counter);
         }

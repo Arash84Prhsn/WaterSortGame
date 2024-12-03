@@ -38,35 +38,13 @@ The game has been implemented using Java and it runs inside a terminal. The sour
 
 The bottles themselves are stored inside a CirculadLinkedList\<Stack\<String\>\> where each stack acts as a bottle and stores the colors inside the bottles as Strings.
 
-The purpose of the Tuple4 class is to create an array of size 10 of 4-tuples(command, indexOfSelectedBottle, argument, numberOfPouredColors) where each item of the array is a command that the player has called. This array is used to implement the undo command of the game. 
+The purpose of the Tuple4 class is to create an array of size 10 of 4-tuples(command, indexOfSelectedBottle, argument, numberOfPouredColors) where each item of the array is a command that the player has called. This array is used to implement the undo command of the game.
 
-### The methods
+The WaterSortGame_Player.java class initializes an object of the WaterSortGame class and the game is played by running this class.
 
+### The methods in WaterSortGame.java
+Aside from the commands that we've already talked about there are a few methods inside the WaterSortGame class that help run the game or help the commands.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-The workspace contains two folders by default, where:
-
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+- `display` This method displays the current state of the bottles and gives the player a list of the commands that he can give the game. This method is recalled after every action until the game finishes.
+- `isSelectable(Stack bottle)` This method checks if the given bottle fulfills the conditions that a bottle must have in order to be selected and returns true if the bottle is selectable and false if it is not. The `select`, `selectNext` and `selectPrevious` methods all use this method to first check if the bottle that they are going to select is selectable and only then select the bottle.
+- `` 
