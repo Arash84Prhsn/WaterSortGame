@@ -28,12 +28,14 @@ public class CircularSinglyLinkedList<T>
     //CircularSinglyLinkedList constructor
     public CircularSinglyLinkedList(){}
 
+    //Getter methods
     public Node<T> getHead() {return head;}
     public T getFirst()      {return head.getElement();}
     public Node<T> getTail() {return tail;}
     public T getLast()       {return tail.getElement();}
     public int getSize()     {return size;}
 
+    //Setter methods
     public void setHead(Node<T> head) {this.head = head;}
     public void setTail(Node<T> tail) {this.tail = tail;}
 
