@@ -18,13 +18,16 @@ There are some rules and commands that you're gonna need to use to achive this g
 
 ## Rules
 There are some rules that you have to follow alongside the commands that you use for playing.
+
 The first rule is a condition for selecting the bottles, you are not allowed to choose a bottle if it is compeletly empty or it is compeletly full of one color.
 
 Second is the rule for pouring onto bottles. in order to pour from a selected bottle onto your destination bottle some conditions must be fulfilled :
 
 - 1- the top color of the selected bottle must match the top color of the destination bottle or the destination must be compeletly empty.
 
-- 2-
+- 2- the pouring will continue until we the destination bottle fills up or we hit a different color in the selected bottle.
+
+
 
 
 
