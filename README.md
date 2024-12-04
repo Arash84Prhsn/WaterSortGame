@@ -79,3 +79,5 @@ in a circular manner if the item at tail is the given item, returns the item at 
 
 - `gePreviousItem(item)` Functions in similar fashion to the `getNextItem()` method except it returns the item before the given 
 item instead of the next one.
+
+## Examples

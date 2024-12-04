@@ -92,7 +92,7 @@ public class WaterSortGame
     public void display()
     {
       
-        //Print the number of each bottle on top of it and make the number green if bottle is selected.
+        //Print the number of each bottle on top of it and make the number green if a bottle is selected.
         for (int i = 1; i<=numberOfBottles; i++) {
             if (bottles.getIndexOf(selectedBottle) == i-1)
                 System.out.print(green + i+ " ".repeat(11)+ resetColor);

@@ -3,7 +3,7 @@ public class Tuple4<T1, T2, T3, T4> {
     private T2 second;
     private T3 third;
     private T4 fourth;
-    //Tuple3 constructor
+    //Tuple4 constructor
     public Tuple4(T1 first, T2 second, T3 third, T4 fourth) {
         this.first = first;
         this.second = second;
