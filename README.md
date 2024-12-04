@@ -54,3 +54,28 @@ Aside from the commands that we've already talked about there are a few methods 
 - `shiftLeftActions` Shifts the actions array to the left and makes index 9 of the array, ("nofunc",-1,-1,-1) 4-tuple. This method is called every time the undo method, undoes a certain action (the undo method always undoes the index 0 of the actions array that's why we at every undo we shift the array to left).
 
 - `hasWon` Checks the current state of all the bottles to see if the game has finished or not. returns true if finished and false otherwise.
+
+- `playGame` Asks the user to start the game and if the player starts the game, it calls the gaming() method.
+
+- `gaming` This is the main method that runs the game and keeps it going using a while loop, displays the bottles and takes the 
+player's command at every turn of the game. This method stops once the game has finished by either the finish command or the 
+hasWon() method.
+
+- `pourUndo` This method simply helps the undo method, undo the pouring action.
+
+> another thing to note is that the normal command functions, if executed properly, will call the addToActions() method and 
+add the current action to the actions array.
+
+### Extra methods in CircularSinglyLinkedList.java
+Aside from the usual methods that you would expect to exist for a linked list, there are some extra ones that have been defined in order to assist the implementation of the methods inside WaterSortGame.java
+
+- `getItemAt(int index)` This method returns the item at the given index(Not the node but the item stored inside the node, index starts from 0.)
+
+- `getIndexOf(item)` Searches the list for the given item and when the item is found, it returns the index at which the item
+resides(returns -1 if the item is unavailable.)
+
+- `getNextItem(item)` returns the item that appears inside the linked list after the given item(Since the list is implemented 
+in a circular manner if the item at tail is the given item, returns the item at the head of the linked list).
+
+- `gePreviousItem(item)` Functions in similar fashion to the `getNextItem()` method except it returns the item before the given 
+item instead of the next one.
