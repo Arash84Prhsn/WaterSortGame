@@ -71,6 +71,8 @@ Aside from the usual methods that you would expect to see in a linked list class
 
 - `getItemAt(int index)` This method returns the item at the given index(Not the node but the item stored inside the node, index starts from 0.)
 
+- `getNodeAt(int index)` Functions just like `getItemAt()`, it returns the node directly instead of the element the node holds.
+
 - `getIndexOf(item)` Searches the list for the given item and when the item is found, it returns the index at which the item
 resides(returns -1 if the item is unavailable.)
 
@@ -79,6 +81,7 @@ in a circular manner if the item at tail is the given item, returns the item at 
 
 - `gePreviousItem(item)` Functions in similar fashion to the `getNextItem()` method except it returns the item prior to the given item instead of the next one.
 
+- `swapItemsByIndex(int i, int j)` Takes the index of two nodes and swaps the items that they hold. This is used to implement the `swap()` method in WaterSortGame class. 
 ## Examples
 
 Selecting a bottle using the select command :
