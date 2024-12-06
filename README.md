@@ -67,7 +67,7 @@ hasWon() method.
 add the current action to the actions array.
 
 ### Extra methods in CircularSinglyLinkedList.java
-Aside from the usual methods that you would expect to exist for a linked list, there are some extra ones that have been defined in order to assist the implementation of the methods inside WaterSortGame.java
+Aside from the usual methods that you would expect to see in a linked list class, there are some extra ones that have been defined in order to assist the implementation of the methods inside WaterSortGame.java
 
 - `getItemAt(int index)` This method returns the item at the given index(Not the node but the item stored inside the node, index starts from 0.)
 
