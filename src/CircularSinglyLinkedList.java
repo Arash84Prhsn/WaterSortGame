@@ -131,6 +131,18 @@ public class CircularSinglyLinkedList<T>
 
     }
 
+    private Node<T> getNodeAt(int index) {
+        if (isEmpty()) return null;
+        
+        if (index+1 > this.getSize() || index < 0) return null;
+
+        Node<T> tempNode = this.head;
+        for(int i = 0; i < index; i++)
+            tempNode = tempNode.getNext();
+
+        return tempNode;
+    }
+
     public int getIndexOf(T item)
     {
         for (int i = 0; i < this.getSize(); i++)
@@ -170,6 +182,18 @@ public class CircularSinglyLinkedList<T>
         }
         
         return tempNode.getElement();
+    }
+
+    public void swapItemsByIndex(int i, int j) {
+
+        if (this.isEmpty() || size==1 || i < 0 || j < 0 || i >= size || j >= size ) return;
+
+        T item1 = this.getItemAt(i);
+        T item2 = this.getItemAt(j);
+
+        this.getNodeAt(i).setElement(item2);
+        this.getNodeAt(j).setElement(item1);
+
     }
 
 }//End of CircularSinglyLinkedList class
