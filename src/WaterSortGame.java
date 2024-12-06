@@ -390,27 +390,16 @@ public class WaterSortGame
             System.out.println("------------------------------------------------------"+resetColor);   
             return;
         }
-        Stack<String> swapBottle = bottles.getItemAt(bottleNumber-1);
-        String[] selectedBottleColors = new String[bottleCapacity];
-        String[] swapBottleColors = new String[bottleCapacity];
-        int selectedBottleSize = selectedBottle.getSize();
-        int swapBottleSize = swapBottle.getSize();
-
-        for (int i = selectedBottleSize - 1; !selectedBottle.isEmpty(); i--)
-            selectedBottleColors[i] = selectedBottle.pop();
-
-        for (int i = swapBottleSize - 1; !swapBottle.isEmpty(); i--)
-            swapBottleColors[i] = swapBottle.pop();        
-
-        for (int i = 0; i < swapBottleSize; i++)
-            selectedBottle.push(swapBottleColors[i]);
-
-        for (int i = 0; i < selectedBottleSize; i++)
-            swapBottle.push(selectedBottleColors[i]);
-
+        //if Index is out of range give appropriate error message.
+        if (bottleNumber < 1 || bottleNumber > numberOfBottles) {
+            System.out.println(red+"------------------------<!!!>-------------------------");
+            System.out.println("|               Invalid bottle number                |");
+            System.out.println("------------------------------------------------------"+resetColor);
+        }
+        //Utilize the swapItemsByIndex() method in CircularSinglyLinkedList to swap bottles.
         this.addToActions("swap", bottles.getIndexOf(selectedBottle), bottleNumber, -1);
-        
-        selectedBottle = swapBottle;
+        bottles.swapItemsByIndex(bottles.getIndexOf(selectedBottle), bottleNumber-1);
+        selectedBottle = bottles.getItemAt(bottleNumber-1);
     }
 
     //This method is used to help the undo method by editing the actions[] Tuple4 array.
@@ -480,30 +469,9 @@ public class WaterSortGame
                 this.shiftLeftActions();
                 break;
             }
-            case "swap":{//since the swapBottle becomes the selected bottle, we need to simply swap swapBottle with the original selected bottle at the time of swap.
-                
-                Stack<String> swapBottle = bottles.getItemAt(indexOfSelectedAtTimeOfAction);
-                
-                String[] selectedBottleColors = new String[bottleCapacity];
-                String[] swapBottleColors = new String[bottleCapacity];
-                
-                int selectedBottleSize = selectedBottle.getSize();
-                int swapBottleSize = swapBottle.getSize();
-    
-                for (int i = selectedBottleSize - 1; !selectedBottle.isEmpty(); i--)
-                    selectedBottleColors[i] = selectedBottle.pop();
-    
-                for (int i = swapBottleSize - 1; !swapBottle.isEmpty(); i--)
-                    swapBottleColors[i] = swapBottle.pop();        
-    
-                for (int i = 0; i < swapBottleSize; i++)
-                    selectedBottle.push(swapBottleColors[i]);
-    
-                for (int i = 0; i < selectedBottleSize; i++)
-                    swapBottle.push(selectedBottleColors[i]);
-
-                selectedBottle = swapBottle;
-
+            case "swap":{//simply use swapItemsByIndex() method to re-swap bottles to their original location 
+                bottles.swapItemsByIndex(indexOfSelectedAtTimeOfAction, argumentGivenToAction-1);
+                selectedBottle = bottles.getItemAt(indexOfSelectedAtTimeOfAction);
                 this.shiftLeftActions();
                 break;
             }   

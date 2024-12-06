@@ -4,6 +4,7 @@ public class WaterSortGame_Player
 {
     public static void main(String[] args) {
         
+        @SuppressWarnings("resource")
         Scanner input = new Scanner(System.in);
         int bottleCapacity;
         System.out.println("Would you like to start the water sort game?(YES/NO)");
@@ -23,4 +24,5 @@ public class WaterSortGame_Player
         }
         else return;
     }
+    
 }
