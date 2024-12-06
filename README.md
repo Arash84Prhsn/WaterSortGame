@@ -88,4 +88,4 @@ Selecting a bottle using the select command:
 
 Swapping two bottles using the swap method:
 
-<img src="img/swap4.JPG" width="300" height="200" />
+<img src="img/swap4.JPG" width="700" height="500" />
