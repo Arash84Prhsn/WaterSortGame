@@ -82,10 +82,18 @@ item instead of the next one.
 
 ## Examples
 
-Selecting a bottle using the select command:
+Selecting a bottle using the select command :
 
-<img src="img/select2.JPG" alt="select2" width="700" height="400" />
+<img src="img/select2.JPG" alt="select 2" width="700" height="400" />
 
-Swapping two bottles using the swap method:
+Swapping two bottles using the swap method :
 
-<img src="img/swap4.JPG" alt="select2" width="700" height="400" />
+<img src="img/swap4.JPG" alt="swap 4" width="700" height="400" />
+
+Pouring onto a bottle using the pour command :
+
+<img src="img/pour5.JPG" alt="pour 5" width="700" height="400" />
+
+Making the final move to win the game :
+
+<img src="img/victory.JPG" alt="YOU WIN!" width="700" height="400" />
