@@ -82,5 +82,10 @@ item instead of the next one.
 
 ## Examples
 
-Selecting a bottle using the select command.
+Selecting a bottle using the select command:
+
 ![img not found](img/select2.JPG)
+
+Swapping two bottles using the swap method:
+
+![img not found](img/swap4.JPG)
