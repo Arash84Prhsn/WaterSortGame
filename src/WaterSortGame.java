@@ -16,9 +16,8 @@ public class WaterSortGame
     private Tuple4<String, Integer, Integer, Integer>[] actions = new Tuple4[10]; 
 
 //---------------------------------------------------------------------------------
-    //Colors ANSI code: (with thanks to chatgpt for writing them all out for me.) 
+    //Colors ANSI code:
     private String resetColor = "\u001B[0m"; // Reset to default color
-    
     private String red = "\u001B[31m";
     private String green = "\u001B[32m";
     private String yellow = "\u001B[33m";
@@ -29,17 +28,6 @@ public class WaterSortGame
     // private String brown = "\\033[38;5;94m";
     // private String orange = "\\033[38;5;214m";
     // private String pink = "\\033[38;5;213m";
-
-    // Background colors (use with fg)
-    // private String redBg = "\u001B[41m";
-    // private String greenBg = "\u001B[42m";
-    // private String yellowBg = "\u001B[43m";
-    // private String blueBg = "\u001B[44m";
-    // private String magentaBg = "\u001B[45m";
-    // private String cyanBg = "\u001B[46m";
-    // private String whiteBg = "\u001B[47m";
-
-    // Bright colors
     // private String brightRed = "\u001B[1;31m";
     // private String brightGreen = "\u001B[1;32m";
     // private String brightYellow = "\u001B[1;33m";
@@ -47,7 +35,6 @@ public class WaterSortGame
     // private String brightMagenta = "\u001B[1;35m";
     // private String brightCyan = "\u001B[1;36m";
     // private String brightWhite = "\u001B[1;37m";
-    
     //End of ANSI codes.
 //----------------------------------------------------------------------------------
     
@@ -551,7 +538,7 @@ public class WaterSortGame
         Scanner input = new Scanner(System.in);
         boolean shouldGameContinue = true;
 
-        //This has been put here, in the case that the colors were initialized in a way that the game was already won.
+        //This has been put here just in case that the colors were initialized in a way that the game was already won.
         if (this.hasWon()) {
             System.out.println(cyan + "-----------------------\\<^-^>/------------------------");
             System.out.println("|                  RARE AUTO WIN!!!!!                |");
@@ -583,7 +570,8 @@ public class WaterSortGame
                     }
                     int bottleNum = input.nextInt();
                     this.select(bottleNum);
-                    //And this if is for the cases that the player gives some really wierd commands like "select 2 swap"
+                    /* And this if is for the cases that the player gives some really wierd commands like "select 2 swap 3 selectNext" and it
+                     * exist for all of the commans except for 'finish' since it's not required there.*/
                     if (input.hasNext()) {
                         System.out.println(red + "------------------------<!!!>-------------------------");
                         System.out.println("|              Only one command per turn             |");
