@@ -572,34 +572,107 @@ public class WaterSortGame
 
             switch (command) {
                 case "select":
+/* You will see this 'if' for all other commands that take an int as argument. This is to ensure the program does not face an error in the 
+ * case that the player gives an input such as "swap pour" to the game*/ 
+                    if (!input.hasNextInt()) {
+                        System.out.println(red + "------------------------<!!!>-------------------------");
+                        System.out.println("|              Invalid command try again             |");
+                        System.out.println("------------------------------------------------------" + resetColor);
+                        input.nextLine();//Consumes the rest of the line and throws it away.
+                        break;
+                    }
                     int bottleNum = input.nextInt();
                     this.select(bottleNum);
+                    //And this if is for the cases that the player gives some really wierd commands like "select 2 swap"
+                    if (input.hasNext()) {
+                        System.out.println(red + "------------------------<!!!>-------------------------");
+                        System.out.println("|              Only one command per turn             |");
+                        System.out.println("------------------------------------------------------" + resetColor);
+                        input.nextLine();
+                        break;
+                    }
                     break;
                 
                 case "deselect":
                     this.deselect();
+                    if (input.hasNext()) {
+                        System.out.println(red + "------------------------<!!!>-------------------------");
+                        System.out.println("|              Only one command per turn             |");
+                        System.out.println("------------------------------------------------------" + resetColor);
+                        input.nextLine();
+                        break;
+                    }
                     break;
                 
                 case "selectNext":
-                    this.selectNext();    
+                    this.selectNext();
+                    if (input.hasNext()) {
+                        System.out.println(red + "------------------------<!!!>-------------------------");
+                        System.out.println("|              Only one command per turn             |");
+                        System.out.println("------------------------------------------------------" + resetColor);
+                        input.nextLine();
+                        break;
+                    }    
                     break;
                 
                 case "selectPrevious":
-                    this.selectPrevious();                    
+                    this.selectPrevious();
+                    if (input.hasNext()) {
+                        System.out.println(red + "------------------------<!!!>-------------------------");
+                        System.out.println("|              Only one command per turn             |");
+                        System.out.println("------------------------------------------------------" + resetColor);
+                        input.nextLine();
+                        break;
+                    }                    
                     break;
                 
                 case "swap":
+                    if (!input.hasNextInt()) {
+                        System.out.println(red + "------------------------<!!!>-------------------------");
+                        System.out.println("|              Invalid command try again             |");
+                        System.out.println("------------------------------------------------------" + resetColor);
+                        input.nextLine();
+                        break;
+                    }
                     int swapNum = input.nextInt();
-                    this.swap(swapNum);                   
+                    this.swap(swapNum);     
+                    if (input.hasNext()) {
+                        System.out.println(red + "------------------------<!!!>-------------------------");
+                        System.out.println("|              Only one command per turn             |");
+                        System.out.println("------------------------------------------------------" + resetColor);
+                        input.nextLine();
+                        break;
+                    }              
                     break;
                 
                 case "pour":
+                    if (!input.hasNextInt()) {
+                        System.out.println(red + "------------------------<!!!>-------------------------");
+                        System.out.println("|              Invalid command try again             |");
+                        System.out.println("------------------------------------------------------" + resetColor);
+                        input.nextLine();
+                        break;
+                    }
                     int pourNum = input.nextInt();
                     this.pour(pourNum);
+                    if (input.hasNext()) {
+                        System.out.println(red + "------------------------<!!!>-------------------------");
+                        System.out.println("|              Only one command per turn             |");
+                        System.out.println("------------------------------------------------------" + resetColor);
+                        input.nextLine();
+                        break;
+                    }
                     break;
                 
                 case "undo":
                     this.undo();
+                    if (input.hasNext()) {
+                        System.out.println(red + "------------------------<!!!>-------------------------");
+                        System.out.println("|              Only one command per turn             |");
+                        System.out.println("------------------------------------------------------" + resetColor);
+                        input.nextLine();
+                        break;
+                    }
                     break;
                     
                 case "finish":
@@ -611,7 +684,7 @@ public class WaterSortGame
                 System.out.println(red + "------------------------<!!!>-------------------------");
                 System.out.println("|              Invalid command try again             |");
                 System.out.println("------------------------------------------------------" + resetColor);
-                    /* This if here just consumes the rest of the line so it's not accidentally read by input.next() again.
+                    /* This 'if' here just consumes the rest of the line so it's not accidentally read by input.next() again.
                      * for example "seleekt 3" causes the default of this switch to run twice but if we clear out the line things should be fine.*/
                     if (input.hasNextLine()) {
                         input.nextLine();
