@@ -28,7 +28,7 @@ Second is the rule for pouring onto bottles. in order to pour from a selected bo
 
 - 2- The pouring will continue until the destination bottle fills up or we reach a different color in the selected bottle.
 
-- 3- You are not allowed to pour onto the same bottle as the current selected bottle
+- 3- You are not allowed to pour a bottle onto itself.
 
 And the last Rule that you should know is that the game will only end when you win or give the finish command 
 otherwise it will continue.
@@ -81,3 +81,6 @@ in a circular manner if the item at tail is the given item, returns the item at 
 item instead of the next one.
 
 ## Examples
+
+Selecting a bottle using the select command.
+![img not found](img/select2.JPG)
