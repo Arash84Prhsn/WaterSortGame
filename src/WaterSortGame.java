@@ -31,10 +31,7 @@ public class WaterSortGame
     // private String brightRed = "\u001B[1;31m";
     // private String brightGreen = "\u001B[1;32m";
     // private String brightYellow = "\u001B[1;33m";
-    // private String brightBlue = "\u001B[1;34m";
-    // private String brightMagenta = "\u001B[1;35m";
-    // private String brightCyan = "\u001B[1;36m";
-    // private String brightWhite = "\u001B[1;37m";
+    // private String brightPurple = "\u001B[1;35m";
     //End of ANSI codes.
 //----------------------------------------------------------------------------------
     
