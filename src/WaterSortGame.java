@@ -16,8 +16,9 @@ public class WaterSortGame
     private Tuple4<String, Integer, Integer, Integer>[] actions = new Tuple4[10]; 
 
 //---------------------------------------------------------------------------------
-    //Colors ANSI code:
+    //Colors ANSI code: (with thanks to chatgpt for writing them all out for me.) 
     private String resetColor = "\u001B[0m"; // Reset to default color
+    
     private String red = "\u001B[31m";
     private String green = "\u001B[32m";
     private String yellow = "\u001B[33m";
@@ -28,10 +29,25 @@ public class WaterSortGame
     // private String brown = "\\033[38;5;94m";
     // private String orange = "\\033[38;5;214m";
     // private String pink = "\\033[38;5;213m";
+
+    // Background colors (use with fg)
+    // private String redBg = "\u001B[41m";
+    // private String greenBg = "\u001B[42m";
+    // private String yellowBg = "\u001B[43m";
+    // private String blueBg = "\u001B[44m";
+    // private String magentaBg = "\u001B[45m";
+    // private String cyanBg = "\u001B[46m";
+    // private String whiteBg = "\u001B[47m";
+
+    // Bright colors
     // private String brightRed = "\u001B[1;31m";
     // private String brightGreen = "\u001B[1;32m";
     // private String brightYellow = "\u001B[1;33m";
-    // private String brightPurple = "\u001B[1;35m";
+    // private String brightBlue = "\u001B[1;34m";
+    // private String brightMagenta = "\u001B[1;35m";
+    // private String brightCyan = "\u001B[1;36m";
+    // private String brightWhite = "\u001B[1;37m";
+    
     //End of ANSI codes.
 //----------------------------------------------------------------------------------
     
@@ -562,53 +578,62 @@ public class WaterSortGame
                         System.out.println(red + "------------------------<!!!>-------------------------");
                         System.out.println("|              Invalid command try again             |");
                         System.out.println("------------------------------------------------------" + resetColor);
-                        input.nextLine();//Consumes the rest of the line and throws it away.
+                        String buffer = input.nextLine();//Consumes the rest of the line and throws it away.
+                        buffer = null;
                         break;
                     }
                     int bottleNum = input.nextInt();
                     this.select(bottleNum);
                     /* And this if is for the cases that the player gives some really wierd commands like "select 2 swap 3 selectNext" and it
-                     * exist for all of the commans except for 'finish' since it's not required there.*/
-                    if (input.hasNext()) {
-                        System.out.println(red + "------------------------<!!!>-------------------------");
-                        System.out.println("|              Only one command per turn             |");
-                        System.out.println("------------------------------------------------------" + resetColor);
-                        input.nextLine();
+                     * exist for all of the commands except for 'finish' since it's not required there.*/
+                    if (input.hasNextLine()) {//this if always returns true it's just here to make thing more understandable.
+                        String buffer = input.nextLine();
+                        if (buffer.length()==0) break;//the if that actully matters.
+                        buffer = null;
+                        System.out.println("------------------------<!?>--------------------------");
+                        System.out.println("|       Input after command will not be read         |");
+                        System.out.println("------------------------------------------------------");
                         break;
                     }
                     break;
                 
                 case "deselect":
                     this.deselect();
-                    if (input.hasNext()) {
-                        System.out.println(red + "------------------------<!!!>-------------------------");
-                        System.out.println("|              Only one command per turn             |");
-                        System.out.println("------------------------------------------------------" + resetColor);
-                        input.nextLine();
+                    if (input.hasNextLine()) {
+                        String buffer = input.nextLine();
+                        if (buffer.length()==0) break;
+                        buffer = null;
+                        System.out.println("------------------------<!?>--------------------------");
+                        System.out.println("|       Input after command will not be read         |");
+                        System.out.println("------------------------------------------------------"); 
                         break;
                     }
                     break;
                 
                 case "selectNext":
                     this.selectNext();
-                    if (input.hasNext()) {
-                        System.out.println(red + "------------------------<!!!>-------------------------");
-                        System.out.println("|              Only one command per turn             |");
-                        System.out.println("------------------------------------------------------" + resetColor);
-                        input.nextLine();
+                    if (input.hasNextLine()) {
+                        String buffer = input.nextLine();
+                        if (buffer.length()==0) break;
+                        buffer = null;
+                        System.out.println("------------------------<!?>--------------------------");
+                        System.out.println("|       Input after command will not be read         |");
+                        System.out.println("------------------------------------------------------");
                         break;
-                    }    
+                    }
                     break;
                 
                 case "selectPrevious":
                     this.selectPrevious();
-                    if (input.hasNext()) {
-                        System.out.println(red + "------------------------<!!!>-------------------------");
-                        System.out.println("|              Only one command per turn             |");
-                        System.out.println("------------------------------------------------------" + resetColor);
-                        input.nextLine();
+                    if (input.hasNextLine()) {
+                        String buffer = input.nextLine();
+                        if (buffer.length()==0) break;
+                        buffer = null;
+                        System.out.println("------------------------<!?>--------------------------");
+                        System.out.println("|       Input after command will not be read         |");
+                        System.out.println("------------------------------------------------------");                        
                         break;
-                    }                    
+                    }               
                     break;
                 
                 case "swap":
@@ -616,18 +641,21 @@ public class WaterSortGame
                         System.out.println(red + "------------------------<!!!>-------------------------");
                         System.out.println("|              Invalid command try again             |");
                         System.out.println("------------------------------------------------------" + resetColor);
-                        input.nextLine();
+                        String buffer = input.nextLine();
+                        buffer = null;
                         break;
                     }
                     int swapNum = input.nextInt();
                     this.swap(swapNum);     
-                    if (input.hasNext()) {
-                        System.out.println(red + "------------------------<!!!>-------------------------");
-                        System.out.println("|              Only one command per turn             |");
-                        System.out.println("------------------------------------------------------" + resetColor);
-                        input.nextLine();
+                    if (input.hasNextLine()) {
+                        String buffer = input.nextLine();
+                        if (buffer.length()==0) break;
+                        buffer = null;
+                        System.out.println("------------------------<!?>--------------------------");
+                        System.out.println("|       Input after command will not be read         |");
+                        System.out.println("------------------------------------------------------");  
                         break;
-                    }              
+                    }     
                     break;
                 
                 case "pour":
@@ -635,27 +663,32 @@ public class WaterSortGame
                         System.out.println(red + "------------------------<!!!>-------------------------");
                         System.out.println("|              Invalid command try again             |");
                         System.out.println("------------------------------------------------------" + resetColor);
-                        input.nextLine();
+                        String buffer = input.nextLine();
+                        buffer = null;
                         break;
                     }
                     int pourNum = input.nextInt();
                     this.pour(pourNum);
-                    if (input.hasNext()) {
-                        System.out.println(red + "------------------------<!!!>-------------------------");
-                        System.out.println("|              Only one command per turn             |");
-                        System.out.println("------------------------------------------------------" + resetColor);
-                        input.nextLine();
+                    if (input.hasNextLine()) {
+                        String buffer = input.nextLine();
+                        if (buffer.length()==0) break;
+                        buffer = null;
+                        System.out.println("------------------------<!?>--------------------------");
+                        System.out.println("|       Input after command will not be read         |");
+                        System.out.println("------------------------------------------------------");    
                         break;
                     }
                     break;
                 
                 case "undo":
                     this.undo();
-                    if (input.hasNext()) {
-                        System.out.println(red + "------------------------<!!!>-------------------------");
-                        System.out.println("|              Only one command per turn             |");
-                        System.out.println("------------------------------------------------------" + resetColor);
-                        input.nextLine();
+                    if (input.hasNextLine()) {
+                        String buffer = input.nextLine();
+                        if (buffer.length()==0) break;
+                        buffer = null;
+                        System.out.println("------------------------<!?>--------------------------");
+                        System.out.println("|       Input after command will not be read         |");
+                        System.out.println("------------------------------------------------------");
                         break;
                     }
                     break;
@@ -672,7 +705,8 @@ public class WaterSortGame
                     /* This 'if' here just consumes the rest of the line so it's not accidentally read by input.next() again.
                      * for example "seleekt 3" causes the default of this switch to run twice but if we clear out the line things should be fine.*/
                     if (input.hasNextLine()) {
-                        input.nextLine();
+                        String buffer = input.nextLine();
+                        buffer = null;
                     }
                     break;
             
