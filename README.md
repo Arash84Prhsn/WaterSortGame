@@ -84,8 +84,8 @@ item instead of the next one.
 
 Selecting a bottle using the select command:
 
-![img not found](img/select2.JPG)
+<img src="img/select2.JPG" alt="select2" width="700" height="400" />
 
 Swapping two bottles using the swap method:
 
-<img src="img/swap4.JPG" width="700" height="500" />
+<img src="img/swap4.JPG" alt="select2" width="700" height="400" />
