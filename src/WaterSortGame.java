@@ -222,6 +222,7 @@ public class WaterSortGame
      * if the bottle is empty or filled with just one color then it cannot be selected. */
     private boolean isSelectable(Stack<String> stack)
     {   
+        
         //If the stack is empty return false
         if (stack.isEmpty()) return false;
         //if the bottle isn't empty nor full, it is selectable so return true
@@ -257,6 +258,7 @@ public class WaterSortGame
             System.out.println(red+"------------------------<!!!>-------------------------");
             System.out.println("|               Invalid bottle number                |");
             System.out.println("------------------------------------------------------"+resetColor);
+            return false;
         }
 
         //Check to see if the bottle is selectable and then select it.

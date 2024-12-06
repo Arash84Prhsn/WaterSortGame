@@ -121,6 +121,7 @@ public class CircularSinglyLinkedList<T>
     {
         if (isEmpty()) return null;
         
+        if (index+1 > this.getSize() || index < 0) return null;
 
         Node<T> tempNode = this.head;
         for(int i = 0; i < index; i++)
