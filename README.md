@@ -42,7 +42,7 @@ The purpose of the Tuple4 class is to create an array of size 10 of 4-tuples(com
 
 The WaterSortGame_Player.java class initializes an object of the WaterSortGame class and the game is played by running this class.
 
-### The methods in WaterSortGame.java
+### The methods in WaterSortGame class
 Aside from the commands that we've already talked about there are a few methods inside the WaterSortGame class that help run the game or help the commands.
 
 - `display` This method displays the current state of the bottles and gives the player a list of the commands that he can give the game. This method is recalled after every action until the game finishes.
@@ -66,7 +66,7 @@ hasWon() method.
 > another thing to note is that the normal command functions, if executed properly, will call the addToActions() method and 
 add the current action to the actions array.
 
-### Extra methods in CircularSinglyLinkedList.java
+### Extra methods in CircularSinglyLinkedList class
 Aside from the usual methods that you would expect to see in a linked list class, there are some extra ones that have been defined in order to assist the implementation of the methods inside WaterSortGame.java
 
 - `getItemAt(int index)` This method returns the item at the given index(Not the node but the item stored inside the node, index starts from 0.)
@@ -77,8 +77,7 @@ resides(returns -1 if the item is unavailable.)
 - `getNextItem(item)` returns the item that appears inside the linked list after the given item(Since the list is implemented 
 in a circular manner if the item at tail is the given item, returns the item at the head of the linked list).
 
-- `gePreviousItem(item)` Functions in similar fashion to the `getNextItem()` method except it returns the item before the given 
-item instead of the next one.
+- `gePreviousItem(item)` Functions in similar fashion to the `getNextItem()` method except it returns the item prior to the given item instead of the next one.
 
 ## Examples
 
@@ -97,3 +96,13 @@ Pouring onto a bottle using the pour command :
 Making the final move to win the game :
 
 <img src="img/victory.JPG" alt="victory.jpg" width="700" height="400" />
+
+Examples of some error messages :
+
+<img src="img/err1.JPG"  width="700" height="400" />
+
+<img src="img/err2.JPG"  width="700" height="400" />
+
+<img src="img/err3.JPG"  width="700" height="400" />
+
+<img src="img/err4.JPG"  width="700" height="400" />

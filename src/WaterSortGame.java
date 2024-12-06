@@ -251,13 +251,22 @@ public class WaterSortGame
 
     //A method that selects a bottle for us if it is selectable
     public boolean select(int bottleNumber)
-    {
+    {   
+        //In the case that index is out of range
+        if (bottleNumber > numberOfBottles || bottleNumber <= 0) {
+            System.out.println(red+"------------------------<!!!>-------------------------");
+            System.out.println("|               Invalid bottle number                |");
+            System.out.println("------------------------------------------------------"+resetColor);
+        }
+
+        //Check to see if the bottle is selectable and then select it.
         if (isSelectable(bottles.getItemAt(bottleNumber-1)))
         {
             this.addToActions("select", bottles.getIndexOf(selectedBottle), bottleNumber, -1);
             selectedBottle = bottles.getItemAt(bottleNumber-1);
         }
         
+        //If it wasn't selectable return error message.
         else {
             System.out.println(red+"------------------------<!!!>-------------------------");
             System.out.println("|             bottle cannot be selected              |");
@@ -328,8 +337,13 @@ public class WaterSortGame
      * or the destination bottle is full, pouring does not occur.*/
     public boolean pour(int bottleNumber)
     {
-        //If no bottle is selected return fase and exit method.
-        if (selectedBottle == null) return false;
+        //If no bottle is selected return false and exit method.
+        if (selectedBottle == null) {
+            System.out.println(red+"------------------------<!!!>-------------------------");
+            System.out.println("|                select a bottle first               |");
+            System.out.println("------------------------------------------------------"+resetColor);   
+            return false;
+        }
         //In the case that the player tries to pour a bottle onto itself.
         if(this.bottles.getIndexOf(selectedBottle) + 1 == bottleNumber) {
             System.out.println(red+"------------------------<!!!>-------------------------");
@@ -366,9 +380,14 @@ public class WaterSortGame
 
     //Swap method to swap the selected bottle with the given bottle.
     public void swap(int bottleNumber)
-    {
-        if (selectedBottle == null) return;//if none of the bottles are selected, do nothing.
-
+    {   
+        //if none of the bottles are selected, do nothing.
+        if (selectedBottle == null) { 
+            System.out.println(red+"------------------------<!!!>-------------------------");
+            System.out.println("|                select a bottle first               |");
+            System.out.println("------------------------------------------------------"+resetColor);   
+            return;
+        }
         Stack<String> swapBottle = bottles.getItemAt(bottleNumber-1);
         String[] selectedBottleColors = new String[bottleCapacity];
         String[] swapBottleColors = new String[bottleCapacity];
