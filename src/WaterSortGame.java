@@ -16,7 +16,7 @@ public class WaterSortGame
     private Tuple4<String, Integer, Integer, Integer>[] actions = new Tuple4[10]; 
 
 //---------------------------------------------------------------------------------
-    //Colors ANSI code: (with thanks to chatgpt for writing them all out for me.) 
+    //Colors ANSI code: 
     private String resetColor = "\u001B[0m"; // Reset to default color
     
     private String red = "\u001B[31m";
@@ -25,30 +25,8 @@ public class WaterSortGame
     private String blue = "\u001B[34m";
     private String purple = "\u001B[35m";
     private String cyan = "\u001B[36m";
-    //These don't work for some reason so for now the've been commented.
-    // private String brown = "\\033[38;5;94m";
-    // private String orange = "\\033[38;5;214m";
-    // private String pink = "\\033[38;5;213m";
-
-    // Background colors (use with fg)
-    // private String redBg = "\u001B[41m";
-    // private String greenBg = "\u001B[42m";
-    // private String yellowBg = "\u001B[43m";
-    // private String blueBg = "\u001B[44m";
-    // private String magentaBg = "\u001B[45m";
-    // private String cyanBg = "\u001B[46m";
-    // private String whiteBg = "\u001B[47m";
-
-    // Bright colors
-    // private String brightRed = "\u001B[1;31m";
-    // private String brightGreen = "\u001B[1;32m";
-    // private String brightYellow = "\u001B[1;33m";
-    // private String brightBlue = "\u001B[1;34m";
-    // private String brightMagenta = "\u001B[1;35m";
-    // private String brightCyan = "\u001B[1;36m";
-    // private String brightWhite = "\u001B[1;37m";
     
-    //End of ANSI codes.
+    //End of ANSI codes(prone to be expanded later).
 //----------------------------------------------------------------------------------
     
     //Class constructor.
@@ -339,6 +317,14 @@ public class WaterSortGame
      * or the destination bottle is full, pouring does not occur.*/
     public boolean pour(int bottleNumber)
     {
+        //In the case that index is out of range
+        if (bottleNumber > numberOfBottles || bottleNumber <= 0) {
+            System.out.println(red+"------------------------<!!!>-------------------------");
+            System.out.println("|               Invalid bottle number                |");
+            System.out.println("------------------------------------------------------"+resetColor);
+            return false;
+        }
+
         //If no bottle is selected return false and exit method.
         if (selectedBottle == null) {
             System.out.println(red+"------------------------<!!!>-------------------------");
@@ -395,6 +381,7 @@ public class WaterSortGame
             System.out.println(red+"------------------------<!!!>-------------------------");
             System.out.println("|               Invalid bottle number                |");
             System.out.println("------------------------------------------------------"+resetColor);
+            return;
         }
         //Utilize the swapItemsByIndex() method in CircularSinglyLinkedList to swap bottles.
         this.addToActions("swap", bottles.getIndexOf(selectedBottle), bottleNumber, -1);
@@ -585,55 +572,44 @@ public class WaterSortGame
                     int bottleNum = input.nextInt();
                     this.select(bottleNum);
                     /* And this if is for the cases that the player gives some really wierd commands like "select 2 swap 3 selectNext" and it
-                     * exist for all of the commands except for 'finish' since it's not required there.*/
-                    if (input.hasNextLine()) {//this if always returns true it's just here to make thing more understandable.
-                        String buffer = input.nextLine();
-                        if (buffer.length()==0) break;//the if that actully matters.
-                        buffer = null;
+                     * exist for all of the commands except for 'finish' since it's not required there.
+                     * It reads the rest of the line and if any extra input was given to the game it gives a warning.*/
+                    if (input.nextLine().length() != 0) {
                         System.out.println("------------------------<!?>--------------------------");
                         System.out.println("|       Input after command will not be read         |");
-                        System.out.println("------------------------------------------------------");
+                        System.out.println("------------------------------------------------------");    
                         break;
                     }
                     break;
                 
                 case "deselect":
                     this.deselect();
-                    if (input.hasNextLine()) {
-                        String buffer = input.nextLine();
-                        if (buffer.length()==0) break;
-                        buffer = null;
+                    if (input.nextLine().length() != 0) {
                         System.out.println("------------------------<!?>--------------------------");
                         System.out.println("|       Input after command will not be read         |");
-                        System.out.println("------------------------------------------------------"); 
+                        System.out.println("------------------------------------------------------");    
                         break;
                     }
                     break;
                 
                 case "selectNext":
                     this.selectNext();
-                    if (input.hasNextLine()) {
-                        String buffer = input.nextLine();
-                        if (buffer.length()==0) break;
-                        buffer = null;
+                    if (input.nextLine().length() != 0) {
                         System.out.println("------------------------<!?>--------------------------");
                         System.out.println("|       Input after command will not be read         |");
-                        System.out.println("------------------------------------------------------");
+                        System.out.println("------------------------------------------------------");    
                         break;
                     }
                     break;
                 
                 case "selectPrevious":
                     this.selectPrevious();
-                    if (input.hasNextLine()) {
-                        String buffer = input.nextLine();
-                        if (buffer.length()==0) break;
-                        buffer = null;
+                    if (input.nextLine().length() != 0) {
                         System.out.println("------------------------<!?>--------------------------");
                         System.out.println("|       Input after command will not be read         |");
-                        System.out.println("------------------------------------------------------");                        
+                        System.out.println("------------------------------------------------------");    
                         break;
-                    }               
+                    }      
                     break;
                 
                 case "swap":
@@ -647,15 +623,12 @@ public class WaterSortGame
                     }
                     int swapNum = input.nextInt();
                     this.swap(swapNum);     
-                    if (input.hasNextLine()) {
-                        String buffer = input.nextLine();
-                        if (buffer.length()==0) break;
-                        buffer = null;
+                    if (input.nextLine().length() != 0) {
                         System.out.println("------------------------<!?>--------------------------");
                         System.out.println("|       Input after command will not be read         |");
-                        System.out.println("------------------------------------------------------");  
+                        System.out.println("------------------------------------------------------");    
                         break;
-                    }     
+                    }  
                     break;
                 
                 case "pour":
@@ -669,10 +642,7 @@ public class WaterSortGame
                     }
                     int pourNum = input.nextInt();
                     this.pour(pourNum);
-                    if (input.hasNextLine()) {
-                        String buffer = input.nextLine();
-                        if (buffer.length()==0) break;
-                        buffer = null;
+                    if (input.nextLine().length() != 0) {
                         System.out.println("------------------------<!?>--------------------------");
                         System.out.println("|       Input after command will not be read         |");
                         System.out.println("------------------------------------------------------");    
@@ -682,13 +652,10 @@ public class WaterSortGame
                 
                 case "undo":
                     this.undo();
-                    if (input.hasNextLine()) {
-                        String buffer = input.nextLine();
-                        if (buffer.length()==0) break;
-                        buffer = null;
+                    if (input.nextLine().length() != 0) {
                         System.out.println("------------------------<!?>--------------------------");
                         System.out.println("|       Input after command will not be read         |");
-                        System.out.println("------------------------------------------------------");
+                        System.out.println("------------------------------------------------------");    
                         break;
                     }
                     break;
