@@ -575,9 +575,9 @@ public class WaterSortGame
                      * exist for all of the commands except for 'finish' since it's not required there.
                      * It reads the rest of the line and if any extra input was given to the game it gives a warning.*/
                     if (input.nextLine().length() != 0) {
-                        System.out.println("------------------------<!?>--------------------------");
+                        System.out.println(yellow + "------------------------<!?>--------------------------");
                         System.out.println("|       Input after command will not be read         |");
-                        System.out.println("------------------------------------------------------");    
+                        System.out.println("------------------------------------------------------" + resetColor);    
                         break;
                     }
                     break;
@@ -585,9 +585,9 @@ public class WaterSortGame
                 case "deselect":
                     this.deselect();
                     if (input.nextLine().length() != 0) {
-                        System.out.println("------------------------<!?>--------------------------");
+                        System.out.println(yellow + "------------------------<!?>--------------------------");
                         System.out.println("|       Input after command will not be read         |");
-                        System.out.println("------------------------------------------------------");    
+                        System.out.println("------------------------------------------------------" + resetColor);    
                         break;
                     }
                     break;
@@ -595,9 +595,9 @@ public class WaterSortGame
                 case "selectNext":
                     this.selectNext();
                     if (input.nextLine().length() != 0) {
-                        System.out.println("------------------------<!?>--------------------------");
+                        System.out.println(yellow + "------------------------<!?>--------------------------");
                         System.out.println("|       Input after command will not be read         |");
-                        System.out.println("------------------------------------------------------");    
+                        System.out.println("------------------------------------------------------" + resetColor);    
                         break;
                     }
                     break;
@@ -605,9 +605,9 @@ public class WaterSortGame
                 case "selectPrevious":
                     this.selectPrevious();
                     if (input.nextLine().length() != 0) {
-                        System.out.println("------------------------<!?>--------------------------");
+                        System.out.println(yellow + "------------------------<!?>--------------------------");
                         System.out.println("|       Input after command will not be read         |");
-                        System.out.println("------------------------------------------------------");    
+                        System.out.println("------------------------------------------------------" + resetColor);    
                         break;
                     }      
                     break;
@@ -624,9 +624,9 @@ public class WaterSortGame
                     int swapNum = input.nextInt();
                     this.swap(swapNum);     
                     if (input.nextLine().length() != 0) {
-                        System.out.println("------------------------<!?>--------------------------");
+                        System.out.println(yellow + "------------------------<!?>--------------------------");
                         System.out.println("|       Input after command will not be read         |");
-                        System.out.println("------------------------------------------------------");    
+                        System.out.println("------------------------------------------------------" + resetColor);   
                         break;
                     }  
                     break;
@@ -643,9 +643,9 @@ public class WaterSortGame
                     int pourNum = input.nextInt();
                     this.pour(pourNum);
                     if (input.nextLine().length() != 0) {
-                        System.out.println("------------------------<!?>--------------------------");
+                        System.out.println(yellow + "------------------------<!?>--------------------------");
                         System.out.println("|       Input after command will not be read         |");
-                        System.out.println("------------------------------------------------------");    
+                        System.out.println("------------------------------------------------------" + resetColor);   
                         break;
                     }
                     break;
@@ -653,9 +653,9 @@ public class WaterSortGame
                 case "undo":
                     this.undo();
                     if (input.nextLine().length() != 0) {
-                        System.out.println("------------------------<!?>--------------------------");
+                        System.out.println(yellow + "------------------------<!?>--------------------------");
                         System.out.println("|       Input after command will not be read         |");
-                        System.out.println("------------------------------------------------------");    
+                        System.out.println("------------------------------------------------------" + resetColor);    
                         break;
                     }
                     break;
